@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PowerPoint Store</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f3f3f3; }
+        h1 { color: #333; }
+        .upload-box {
+            background: white; padding: 20px; border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 30px;
+        }
+        .files { background: white; padding: 20px; border-radius: 10px; }
+        a { text-decoration: none; color: #007bff; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>📊 PowerPoint Slide Store</h1>
+
+    <div class="upload-box">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".ppt,.pptx" required>
+            <button type="submit">Upload Slide</button>
+        </form>
+    </div>
+
+    <div class="files">
+        <h2>Available Slides</h2>
+        <ul>
+            {% for file in files %}
+            <li><a href="/download/{{ file }}">{{ file }}</a></li>
+            {% else %}
+            <li>No slides uploaded yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
