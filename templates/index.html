@@ -3,243 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GachTheFast Style - PowerPoint Store</title>
-
-  <!-- Google Font -->
+  <title>PowerPoint Slide Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{
-      --bg:#0b0f1a;
-      --card:#0f1724;
-      --muted:#9aa7bd;
-      --accent:#7c3aed; /* purple accent */
-      --accent2:#06b6d4; /* cyan accent */
-      --glass: rgba(255,255,255,0.04);
+      --bg:#0b0f1a; --card:#0f1724; --muted:#9aa7bd;
+      --accent:#7c3aed; --accent2:#06b6d4; --glass: rgba(255,255,255,0.04);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
-      background:linear-gradient(180deg,var(--bg),#031124 120%);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    /* header */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:18px 28px;
-      background:linear-gradient(90deg,var(--card),#061025);
-      box-shadow:0 6px 30px rgba(3,6,12,0.6);
-      position:sticky; top:0; z-index:30;
-    }
-    .brand{
-      display:flex; align-items:center; gap:14px;
-    }
-    .logo{
-      width:48px; height:48px; border-radius:8px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      display:flex; align-items:center; justify-content:center;
-      font-weight:700; color:white; font-size:20px;
-      box-shadow:0 6px 18px rgba(92,37,255,0.18), inset 0 -6px 18px rgba(0,0,0,0.2);
-    }
-    .brand h1{ font-size:18px; margin:0; letter-spacing:0.2px }
-    .brand p{ margin:0; color:var(--muted); font-size:12px }
-
-    nav{ display:flex; gap:12px; align-items:center }
-    nav a{ color:var(--muted); text-decoration:none; padding:8px 12px;border-radius:8px }
-    nav a:hover{ color:white; background:rgba(255,255,255,0.03) }
-
-    /* page layout */
-    .container{ max-width:1100px; margin:28px auto; padding:0 18px; }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:20px;
-      align-items:start;
-    }
-
-    /* left main card */
-    .main-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      padding:22px;
-      box-shadow: 0 10px 40px rgba(2,6,12,0.6);
-    }
-    .hero{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      margin-bottom:18px;
-    }
-    .hero-left h2{ margin:0; font-size:20px }
-    .hero-left p{ margin:6px 0 0; color:var(--muted); font-size:13px }
-
-    /* topup box (styled like gachthefast) */
-    .topup-box{
-      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015));
-      border-radius:10px; padding:18px; margin-bottom:16px;
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .topup-title{ display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
-    .topup-title h3{ margin:0; font-size:16px }
-    .balance { color:var(--accent2); font-weight:600 }
-
-    form.topup-form { display:flex; gap:10px; flex-wrap:wrap; }
-    .topup-form input[type=text], .topup-form select {
-      flex:1 1 220px; padding:10px 12px; border-radius:8px;
-      border:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);
-      color: #eaf6ff;
-      outline:none;
-    }
-    .topup-form input::placeholder{ color:rgba(230,238,248,0.45) }
-    .topup-form button{
-      background: linear-gradient(90deg,var(--accent),var(--accent2));
-      color:white; border:none; padding:10px 16px; border-radius:8px; cursor:pointer;
-      box-shadow:0 8px 28px rgba(94,51,255,0.14);
-    }
-    .topup-note{ font-size:12px; color:var(--muted); margin-top:8px }
-
-    /* history */
-    .history{ margin-top:12px; }
-    .history table{ width:100%; border-collapse:collapse; font-size:13px; color:var(--muted) }
-    .history th, .history td{ text-align:left; padding:10px; border-bottom:1px dashed rgba(255,255,255,0.02) }
-    .tag-pending { color:#f59e0b }
-    .tag-approved { color:#10b981 }
-
-    /* right column (sidebar) */
-    .sidebar-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px; padding:18px; box-shadow:0 8px 30px rgba(0,0,0,0.6);
-    }
-    .account-item{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.02) }
-    .small-muted{ color:var(--muted); font-size:13px }
-
-    footer{ text-align:center; color:var(--muted); margin:28px 0 64px; font-size:13px }
-
-    /* responsive */
-    @media (max-width:980px){
-      .grid{ grid-template-columns: 1fr; }
-      .sidebar-card{ order: -1 }
-    }
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg),#031124);color:#e6eef8}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:linear-gradient(90deg,var(--card),#061025)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+    nav a{color:var(--muted);text-decoration:none;margin-left:12px}
+    .container{max-width:1100px;margin:30px auto;padding:0 18px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:12px}
+    h2{margin:0 0 10px 0}
+    .files-list{display:flex;flex-direction:column;gap:10px}
+    .file-item{display:flex;justify-content:space-between;align-items:center;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px}
+    .file-item a{color:var(--accent2);text-decoration:none}
+    .small-muted{color:var(--muted);font-size:13px}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+    .sidebar-card{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+    footer{text-align:center;color:var(--muted);margin:28px 0 60px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
     <div class="brand">
-      <div class="logo">GF</div>
+      <div class="logo">PS</div>
       <div>
-        <h1>GachTheFast UI</h1>
-        <p>PowerPoint Slide Store — giao diện giống phong cách</p>
+        <div style="font-weight:600">PowerPoint Slide Store</div>
+        <div class="small-muted">Upload slides & sell</div>
       </div>
     </div>
-
     <nav>
-      <a href="#">Trang chủ</a>
-      <a href="#">Cửa hàng</a>
-      <a href="#">Hỗ trợ</a>
-      <a href="{{ url_for('login') }}">Đăng nhập</a>
+      <a href="{{ url_for('index') }}">Trang chủ</a>
+      <a href="{{ url_for('topup') }}">Nạp thẻ</a>
+      <a href="{{ url_for('topup_history') }}">Lịch sử nạp</a>
+      {% if user %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
     </nav>
   </header>
 
   <div class="container">
     <div class="grid">
-      <!-- LEFT -->
-      <div class="main-card">
-        <div class="hero">
-          <div class="hero-left">
-            <h2>Nạp thẻ nhanh</h2>
-            <p>Nạp thẻ để nạp tiền vào tài khoản, sau đó dùng để mua / bán slide.</p>
-          </div>
-          <div class="hero-right small-muted">Hãy đăng nhập để nạp thẻ</div>
-        </div>
+      <!-- left: list slides (NO upload form here) -->
+      <div class="card">
+        <h2>📚 Slides hiện có</h2>
+        <p class="small-muted">Những file .pptx/.ppt bạn đã đặt trong thư mục <code>uploads/</code>.</p>
 
-        <div class="topup-box">
-          <div class="topup-title">
-            <h3>Form nạp thẻ</h3>
-            <div class="small-muted">Lưu ý: chỉ nhập thông tin thẻ</div>
-          </div>
-
-          <!-- Form: nếu dùng Flask, action="/topup" method="post" -->
-          <form class="topup-form" action="{{ url_for('topup') }}" method="post">
-            <select name="card_type" required>
-              <option value="">Chọn nhà mạng</option>
-              <option value="viettel">Viettel</option>
-              <option value="mobifone">Mobifone</option>
-              <option value="vinaphone">Vinaphone</option>
-            </select>
-
-            <input name="serial" type="text" placeholder="Serial (số seri)" required />
-            <input name="code" type="text" placeholder="Mã thẻ (code)" required />
-
-            <button type="submit">Gửi yêu cầu</button>
-          </form>
-
-          <div class="topup-note">Sau khi gửi, admin sẽ duyệt. Bạn có thể theo dõi trạng thái tại lịch sử phía dưới.</div>
-
-          <div class="history">
-            <h4 style="margin-top:12px;color:#dbeafe">Lịch sử nạp (mẫu)</h4>
-            <table>
-              <thead>
-                <tr><th>Thời gian</th><th>Tài khoản</th><th>Số tiền</th><th>Trạng thái</th></tr>
-              </thead>
-              <tbody>
-                <!-- sample rows; Flask sẽ render thực tế -->
-                <tr><td>2025-10-05 21:34</td><td>BABYGOSH</td><td>100.000</td><td class="tag-approved">Approved</td></tr>
-                <tr><td>2025-10-06 09:12</td><td>demo_user</td><td>0</td><td class="tag-pending">Pending</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Optional: upload area (kept minimal) -->
-        <div style="margin-top:14px; padding:12px; border-radius:8px; background:var(--glass); border:1px solid rgba(255,255,255,0.02)">
-          <strong>Upload slides</strong>
-          <p class="small-muted">Đăng slide .pptx (chỉ khi bạn đã đăng nhập)</p>
-          <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".ppt,.pptx" style="margin-top:8px">
-            <button class="btn" type="submit" style="display:inline-block;margin-left:8px;background:var(--accent);padding:8px 12px;border-radius:8px;border:none;color:white">Upload</button>
-          </form>
+        <div class="files-list">
+          {% if files %}
+            {% for f in files %}
+              <div class="file-item">
+                <div style="max-width:70%;">{{ f }}</div>
+                <div>
+                  <a class="btn" href="{{ url_for('download_file', filename=f) }}">Tải về</a>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="small-muted">Chưa có slide nào. Đặt file vào thư mục <code>uploads/</code> để hiển thị.</div>
+          {% endif %}
         </div>
       </div>
 
-      <!-- RIGHT SIDEBAR -->
+      <!-- right: account + quick links -->
       <aside class="sidebar-card">
         <h3 style="margin-top:0">Tài khoản</h3>
-
         {% if user %}
-        <div class="account-item">
-          <div>
-            <div style="font-weight:600">{{ user.username }}</div>
-            <div class="small-muted">Tài khoản</div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:600">{{ user.username }}</div>
+              <div class="small-muted">Tài khoản</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:700;color:var(--accent2)">{{ user.balance }} VNĐ</div>
+              <div class="small-muted">Số dư</div>
+            </div>
           </div>
-          <div style="text-align:right">
-            <div class="balance">{{ user.balance }} VNĐ</div>
-            <div class="small-muted">Số dư</div>
+          <div style="margin-top:12px">
+            <a class="btn" href="{{ url_for('topup') }}">Nạp thẻ</a>
+            <a style="margin-left:8px;color:var(--muted);text-decoration:none" href="{{ url_for('topup_history') }}">Xem lịch sử</a>
           </div>
-        </div>
-
-        <div style="padding-top:12px">
-          <a href="{{ url_for('logout') }}" style="color:var(--muted);text-decoration:none">Logout</a>
-          <a href="{{ url_for('topup') }}" style="float:right;color:var(--accent);text-decoration:none">Nạp thêm</a>
-        </div>
         {% else %}
-        <div style="padding:10px 0"><a href="{{ url_for('login') }}" style="color:var(--accent);text-decoration:none">Đăng nhập</a> hoặc <a href="{{ url_for('register') }}" style="color:var(--muted);text-decoration:none">Đăng ký</a></div>
+          <div class="small-muted">Bạn chưa đăng nhập.</div>
+          <div style="margin-top:12px"><a class="btn" href="{{ url_for('login') }}">Đăng nhập</a></div>
         {% endif %}
-
-        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0">
-
-        <h4 style="margin:6px 0 12px">Thông báo</h4>
-        <p class="small-muted">Hệ thống nạp tự động qua admin / Discord. Mua bán slide vui vẻ, tuân thủ luật.</p>
       </aside>
     </div>
   </div>
 
   <footer>
-    © 2025 - Your Site — Giao diện phong cách GachTheFast
+    © 2025 PowerPoint Slide Store
   </footer>
 </body>
 </html>
